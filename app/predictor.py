@@ -4,15 +4,12 @@ import keras.models
 import numpy as np
 import re
 import cv2
-import glob
-import random as rd
 
-from PIL import ImageEnhance
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers.convolutional import Convolution2D, MaxPooling2D
 
-model = keras.models.load_model('chess_model.h5')
+model = keras.models.load_model(os.path.abspath("/code/app/chess_model.h5"))
 
 piece_symbols = 'prbnkqPRBNKQ'
 
@@ -34,7 +31,7 @@ def getModel():
 
 def display_with_predicted_fen(image):
 
-    pred = model.predict(preprocess_image("media/" + str(image) + ".jpeg")).argmax(axis=1).reshape(-1, 8, 8)
+    pred = model.predict(preprocess_image("/code/app/media/" + str(image) + ".jpeg")).argmax(axis=1).reshape(-1, 8, 8)
     fen = fen_from_onehot(pred[0])
     return fen
 
