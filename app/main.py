@@ -6,6 +6,9 @@ from .predictor import display_with_predicted_fen
 
 app = FastAPI()
 
+# Методы API
+
+
 @app.post("/uploadfile/")
 async def create_upload_file(file: UploadFile = File(...)) -> str:
     myuuid = uuid.uuid4()
