@@ -10,5 +10,4 @@ def test_get_fen_code():
 
   response = client.post('/uploadfile', files=_files)
 
-  assert response.status_code == HTTPStatus.CREATED
   assert response.status_code == 200

@@ -13,21 +13,21 @@ model = keras.models.load_model(os.path.abspath("/code/app/chess_model.h5"))
 
 piece_symbols = 'prbnkqPRBNKQ'
 
-def getModel():
-    model = Sequential()
-    model.add(Convolution2D(32, (3, 3), activation='relu', input_shape=(30, 30, 3)))
-    model.add(MaxPooling2D(pool_size=(3, 3)))
-    model.add(Convolution2D(16, (5, 5),activation='relu'))
-    model.add(Flatten())
-    model.add(Dropout(0.35))
-    model.add(Dense(13, activation='softmax'))
-    model.compile(optimizer='adam',
-                  loss='categorical_crossentropy',
-                  metrics=['accuracy'])
-    EPOCHS = 100
-    hist = model.fit(train_gen(train), steps_per_epoch=train_size // EPOCHS, epochs=EPOCHS,
-                     validation_data=pred_gen(test), validation_steps=test_size // EPOCHS)
-    return model;
+# def getModel():
+#     model = Sequential()
+#     model.add(Convolution2D(32, (3, 3), activation='relu', input_shape=(30, 30, 3)))
+#     model.add(MaxPooling2D(pool_size=(3, 3)))
+#     model.add(Convolution2D(16, (5, 5),activation='relu'))
+#     model.add(Flatten())
+#     model.add(Dropout(0.35))
+#     model.add(Dense(13, activation='softmax'))
+#     model.compile(optimizer='adam',
+#                   loss='categorical_crossentropy',
+#                   metrics=['accuracy'])
+#     EPOCHS = 100
+#     hist = model.fit(train_gen(train), steps_per_epoch=train_size // EPOCHS, epochs=EPOCHS,
+#                      validation_data=pred_gen(test), validation_steps=test_size // EPOCHS)
+#     return model;
 
 def display_with_predicted_fen(image):
 
