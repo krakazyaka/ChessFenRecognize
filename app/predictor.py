@@ -9,7 +9,7 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers.convolutional import Convolution2D, MaxPooling2D
 
-model = keras.models.load_model(os.path.abspath("/code/app/chess_model.h5"))
+model = keras.models.load_model(os.path.abspath("./app/chess_model.h5"))
 
 piece_symbols = 'prbnkqPRBNKQ'
 
