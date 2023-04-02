@@ -15,5 +15,5 @@ def test_get_fen_code():
   )
   assert response.status_code == 200
   assert response.json == {
-    "fen": "a672f54f-37d4-4c81-87d6-4d95786483a7"
+    "1b1b2k1-K2B1q2-R3B2p-3b1NR1-5p2-3N4-8-5N2"
   }
