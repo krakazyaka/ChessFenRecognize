@@ -12,7 +12,7 @@ app = FastAPI()
 @app.post("/uploadfile/")
 async def create_upload_file(file: UploadFile = File(...)) -> str:
     myuuid = uuid.uuid4()
-    with open("/code/app/media/" + str(myuuid) + ".jpeg", "wb") as image:
+    with open("./app/media/" + str(myuuid) + ".jpeg", "wb") as image:
         shutil.copyfileobj(file.file, image)
     return {"Id": myuuid}
 

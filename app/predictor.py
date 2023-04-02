@@ -31,7 +31,7 @@ piece_symbols = 'prbnkqPRBNKQ'
 
 def display_with_predicted_fen(image):
 
-    pred = model.predict(preprocess_image("/code/app/media/" + str(image) + ".jpeg")).argmax(axis=1).reshape(-1, 8, 8)
+    pred = model.predict(preprocess_image("./app/media/" + str(image) + ".jpeg")).argmax(axis=1).reshape(-1, 8, 8)
     fen = fen_from_onehot(pred[0])
     return fen
 
